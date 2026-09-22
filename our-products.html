@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+<meta charset="utf-8"/>
+
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Our Products – Clarehil Literacy Development Foundation</title>
+
+<link href="logo.png" rel="icon" sizes="32x32"/>
+<link href="logo.png" rel="icon" sizes="192x192"/>
+<link href="logo.png" rel="apple-touch-icon"/>
+
+<link href="modern-style.css" rel="stylesheet"/>
+
+
+<style>
+
+/* =========================================
+   PRODUCTS HEADER
+========================================= */
+
+.products-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.products-header-inner {
+  max-width: 1180px;
+  margin: auto;
+  min-height: 72px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.products-brand img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+}
+
+.products-nav {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.products-nav a {
+  text-decoration: none;
+  color: #334155;
+  font-size: .84rem;
+  font-weight: 700;
+}
+
+.products-nav a:hover {
+  color: #0f3460;
+}
+
+.products-menu {
+  display: none;
+  border: 0;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
+/* =========================================
+   PRODUCT DESCRIPTION
+========================================= */
+
+.product-description {
+  margin: 0;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+
+/* =========================================
+   DESCRIPTION TEXT
+========================================= */
+
+.description-text {
+  display: inline;
+}
+
+
+/* =========================================
+   SEE MORE / SEE LESS BUTTON
+========================================= */
+
+.see-more-btn {
+  display: inline;
+
+  border: none !important;
+  outline: none !important;
+
+  background: transparent !important;
+  background-color: transparent !important;
+
+  box-shadow: none !important;
+
+  padding: 0 !important;
+
+  margin: 0 0 0 5px;
+
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 700;
+
+  color: inherit;
+
+  cursor: pointer;
+
+  text-decoration: underline;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+
+/* Remove every default button state */
+
+.see-more-btn:hover,
+.see-more-btn:focus,
+.see-more-btn:active,
+.see-more-btn:focus-visible {
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.products-footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 42px 20px 22px;
+}
+
+.products-footer-inner {
+  max-width: 1180px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.2fr .8fr .8fr;
+  gap: 30px;
+}
+
+.products-footer h3 {
+  color: #fff !important;
+  font-size: 1rem !important;
+  margin: 0 0 10px;
+}
+
+.products-footer p,
+.products-footer a {
+  font-size: .82rem !important;
+  line-height: 1.6 !important;
+  color: #cbd5e1 !important;
+  text-decoration: none;
+}
+
+.products-footer-bottom {
+  max-width: 1180px;
+  margin: 28px auto 0;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  font-size: .72rem;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 760px) {
+
+  .products-nav {
+    display: none;
+  }
+
+  .products-menu {
+    display: block;
+  }
+
+  .products-footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .products-footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .products-header-inner {
+    min-height: 62px;
+  }
+
+  .products-brand img {
+    width: 50px;
+    height: 50px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<main class="products-page">
+
+  <div class="products-wrap">
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <section class="products-hero">
+
+      <h1>Our Products</h1>
+
+      <p>
+        Through our skill-acquisition and empowerment initiatives, Clarehil Literacy Development Foundation equips young girls and women with practical, income-generating skills. These products represent more than what we make they represent skills acquired, confidence built, and opportunities created for sustainable livelihoods.
+      </p>
+
+    </section>
+
+
+    <!-- =========================================
+         PRODUCTS
+    ========================================== -->
+
+    <section aria-label="Product list" class="products-grid">
+
+
+      <!-- =======================================
+           SOAP
+      ======================================== -->
+
+      <div class="product-card">
+
+        <img
+          alt="Soap products"
+          loading="lazy"
+          src="product/file_00000000ac7481f4af35eaaa0901b66b.png"
+        />
+
+        <div class="product-card-body">
+
+          <span class="product-tag">PERFUMES</span>
+
+          <p class="product-description">
+
+            <span class="description-text">
+             Beautifully crafted fragrances produced through our skill-acquisition and entrepreneurship programme. Through perfume-making training, young women and girls gain practical skills that can be developed into sustainable income-generating ventures.
+            </span>
+
+            <button
+              class="see-more-btn"
+              type="button"
+            >
+              See more
+            </button>
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- =======================================
+           TISSUE PAPER
+      ======================================== -->
+
+      <div class="product-card">
+
+        <img
+          alt="Tissue paper"
+          loading="lazy"
+          src="product/file_0000000086f8824383fad90a2cc6856d.png"
+        />
+
+        <div class="product-card-body">
+
+          <span class="product-tag">GERMICIDE</span>
+
+          <p class="product-description">
+
+            <span class="description-text">
+           A hygiene-focused product developed through our empowerment initiative, where young women are trained in practical production skills. It supports everyday cleanliness and hygiene while creating opportunities for economic independence.
+            </span>
+
+            <button
+              class="see-more-btn"
+              type="button"
+            >
+              See more
+            </button>
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- =======================================
+           HAND WASH
+      ======================================== -->
+
+      <div class="product-card">
+
+        <img
+          alt="Hand wash"
+          loading="lazy"
+          src="product/file_00000000451481f4bcc76ffce7609008.png"
+        />
+
+        <div class="product-card-body">
+
+          <span class="product-tag">Liquid Soap</span>
+
+          <p class="product-description">
+
+            <span class="description-text">
+              Quality liquid soap produced through our women and girls’
+              skill-acquisition programme, equipping beneficiaries with
+              practical skills for self-reliance and sustainable livelihoods.
+              Suitable for everyday household cleaning and personal hygiene.
+            </span>
+
+            <button
+              class="see-more-btn"
+              type="button"
+            >
+              See more
+            </button>
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- =======================================
+           BODY CARE
+      ======================================== -->
+
+      <div class="product-card">
+
+        <img
+          alt="Body care products"
+          loading="lazy"
+          src="product/file_0000000020e481f4b7dea1e1bee7d298.png"
+        />
+
+        <div class="product-card-body">
+
+          <span class="product-tag">Perfumes</span>
+
+          <p class="product-description">
+
+            <span class="description-text">
+         Beautifully crafted fragrances created through our skill-acquisition and entrepreneurship programme. Each perfume represents creativity, practical learning, and an opportunity for young women and girls to develop valuable skills that can grow into sustainable income-generating ventures.
+            </span>
+
+            <button
+              class="see-more-btn"
+              type="button"
+            >
+              See more
+            </button>
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- =======================================
+           LIQUID SOAP
+      ======================================== -->
+
+      <div class="product-card">
+
+        <img
+          alt="Cleaning supplies"
+          loading="lazy"
+          src="product/file_00000000079881f49e2d21785d8e0696.png"
+        />
+
+        <div class="product-card-body">
+
+          <span class="product-tag">Detergent</span>
+
+          <p class="product-description">
+
+            <span class="description-text">
+             Antiseptic Produced as part of our practical skills and entrepreneurship training for young women and girls. The programme provides hands-on knowledge in product making while promoting hygiene, confidence and sustainable livelihood opportunities.
+            </span>
+
+            <button
+              class="see-more-btn"
+              type="button"
+            >
+              See more
+            </button>
+
+          </p>
+
+        </div>
+
+      </div>
+      
+    </section>
+
+  </div>
+
+</main>
+
+
+<!-- =========================================
+     SEE MORE / SEE LESS FUNCTION
+========================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const descriptions = document.querySelectorAll(".product-description");
+
+  descriptions.forEach(function (description) {
+
+    const textElement = description.querySelector(".description-text");
+    const button = description.querySelector(".see-more-btn");
+
+    if (!textElement || !button) {
+      return;
+    }
+
+
+    /* Save the complete original text */
+
+    const fullText = textElement.textContent.trim();
+
+    /*
+      Number of characters shown before
+      "See more".
+
+      This keeps the cards compact on
+      mobile and desktop.
+    */
+
+    const maxCharacters = 85;
+
+
+    /*
+      If the description is already short,
+      there is nothing to expand.
+    */
+
+    if (fullText.length <= maxCharacters) {
+
+      textElement.textContent = fullText;
+
+      button.style.display = "none";
+
+      return;
+    }
+
+
+    /*
+      Create shortened version.
+      Cut at the nearest space so words
+      are not broken in half.
+    */
+
+    let shortText = fullText.substring(0, maxCharacters);
+
+    const lastSpace = shortText.lastIndexOf(" ");
+
+    if (lastSpace > 0) {
+      shortText = shortText.substring(0, lastSpace);
+    }
+
+    shortText = shortText.trim() + "...";
+
+
+    /*
+      Initially show shortened text.
+    */
+
+    textElement.textContent = shortText;
+
+    button.textContent = "See more";
+
+
+    /*
+      SEE MORE / SEE LESS
+    */
+
+    button.addEventListener("click", function () {
+
+      const expanded = button.dataset.expanded === "true";
+
+
+      if (expanded) {
+
+        /* Collapse */
+
+        textElement.textContent = shortText;
+
+        button.textContent = "See more";
+
+        button.dataset.expanded = "false";
+
+      } else {
+
+        /* Expand */
+
+        textElement.textContent = fullText;
+
+        button.textContent = "See less";
+
+        button.dataset.expanded = "true";
+
+      }
+
+    });
+
+  });
+
+});
+
+</script>
+
+</body>
+
+</html>
