@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en-US">
 <head>
@@ -6,10 +6,10 @@
 <meta content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" name="viewport"/>
 <link href="https://gmpg.org/xfn/11" rel="profile"/>
 <title>About Us – Clarehil Literacy Development Foundation</title>
-<meta content="max-image-preview:large" name="robots">
-<link href="https://fonts.googleapis.com/" rel="dns-prefetch">
-<link href="../feed/index.html" rel="alternate" title="Bridge To Better Futures Initiative » Feed" type="application/rss+xml"/>
-<link href="../comments/feed/index.html" rel="alternate" title="Bridge To Better Futures Initiative » Comments Feed" type="application/rss+xml"/>
+<meta content="max-image-preview:large" name="robots"/>
+<link href="https://fonts.googleapis.com/" rel="dns-prefetch"/>
+<link href="../feed/index.html" rel="alternate" title="Clarehil Foundation » Feed" type="application/rss+xml">
+<link href="../comments/feed/index.html" rel="alternate" title="Clarehil Foundation » Comments Feed" type="application/rss+xml"/>
 <link href="../wp-json/oembed/1.0/embed@url=https%253A%252F%252Fbridge2betterinitiative.org%252Fabout-us%252F" rel="alternate" title="oEmbed (JSON)" type="application/json+oembed"/>
 <link href="../wp-json/oembed/1.0/embed@url=https%253A%252F%252Fbridge2betterinitiative.org%252Fabout-us%252F&amp;format=xml" rel="alternate" title="oEmbed (XML)" type="text/xml+oembed"/>
 <style id="wp-img-auto-sizes-contain-inline-css">
@@ -47,12 +47,12 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/><!--n2css--><!--n2js--><script id="jquery-core-js" src="wp-includes/js/jquery/jquery.min.js@ver=3.7.1"></script>
 <script id="jquery-migrate-js" src="wp-includes/js/jquery/jquery-migrate.min.js@ver=3.4.1"></script>
 <script id="bdt-uikit-js" src="wp-content/plugins/bdthemes-prime-slider-lite/assets/js/bdt-uikit.min.js@ver=3.21.7"></script>
-<link href="../wp-json/index.html" rel="https://api.w.org/"><link href="wp-json/wp/v2/pages/1970" rel="alternate" title="JSON" type="application/json"/><link href="https://bridge2betterinitiative.org/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
-<meta content="WordPress 7.1" name="generator">
+<link href="../wp-json/index.html" rel="https://api.w.org/"/><link href="wp-json/wp/v2/pages/1970" rel="alternate" title="JSON" type="application/json"><link href="https://bridge2betterinitiative.org/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+<meta content="WordPress 7.1" name="generator"/>
 <link href="../index.html@p=1970.html" rel="canonical"/>
 <link href="../index.html@p=1970.html" rel="shortlink"/>
-<meta content="1.4.9" name="cdp-version"/><noscript><link href="wp-content/themes/blocksy/static/bundle/no-scripts.min.css" rel="stylesheet" type="text/css"/></noscript>
-<meta content="Elementor 3.26.3; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto" name="generator"/>
+<meta content="1.4.9" name="cdp-version"><noscript><link href="wp-content/themes/blocksy/static/bundle/no-scripts.min.css" rel="stylesheet" type="text/css"/></noscript>
+<meta content="Elementor 3.26.3; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto" name="generator">
 <style>
 				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
 				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
@@ -71,10 +71,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 					}
 				}
 			</style>
-<link href="logo.png" rel="icon" sizes="32x32">
-<link href="logo.png" rel="icon" sizes="192x192"/>
+<link href="logo.png" rel="icon" sizes="32x32"/>
+<link href="logo.png" rel="icon" sizes="192x192">
 <link href="logo.png" rel="apple-touch-icon"/>
-<meta content="logo.png" name="msapplication-TileImage">
+<meta content="logo.png" name="msapplication-TileImage"/>
 <style id="wp-custom-css">
 .ct-service-card:hover .elementor-widget-icon svg {
 	fill: var(--theme-palette-color-8) !important;
@@ -194,7 +194,37 @@ input#wpforms-4389-field_2 {
 				}
 			</style> <link href="wp-content/plugins/fluentform/assets/css/fluent-forms-elementor-widget.css@ver=5.2.9.css" id="fluentform-elementor-widget-css" media="all" rel="stylesheet"/>
 <link href="modern-style.css" rel="stylesheet"/>
-</meta></link></meta></link></link></meta></head>
+</link></meta></meta></link></link>
+
+<style id="clarehil-image-input-overrides">
+/* Clarehil manual image inputs: replace Elementor background-image sources with editable <img src=""> inputs without changing layout. */
+.elementor-element[data-clarehil-image-input="img-src"] {
+  background-image: none !important;
+  position: relative;
+  overflow: hidden;
+}
+.elementor-element[data-clarehil-image-input="img-src"] > img.clarehil-manual-image {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+.elementor-element[data-clarehil-image-input="img-src"] > .e-con-inner,
+.elementor-element[data-clarehil-image-input="img-src"] > .elementor-widget-container,
+.elementor-element[data-clarehil-image-input="img-src"] > .elementor-element {
+  position: relative;
+  z-index: 1;
+}
+</style></head>
 <body class="wp-singular page-template-default page page-id-1970 wp-custom-logo wp-embed-responsive wp-theme-blocksy wp-child-theme-blocksy-child elementor-default elementor-kit-1476 elementor-page elementor-page-1970 ct-elementor-default-template" data-footer="type-1" data-header="type-1:sticky" data-link="type-2" data-prefix="single_page" itemscope="itemscope" itemtype="https://schema.org/WebPage">
 <a class="skip-link screen-reader-text" href="../index.html@p=1970.html#main">Skip to content</a><div class="ct-drawer-canvas" data-location="start"><div aria-label="Offcanvas modal" class="ct-panel ct-header" data-behaviour="right-side" id="offcanvas" inert=""><div class="ct-panel-inner">
 <div class="ct-panel-actions">
@@ -204,7 +234,7 @@ input#wpforms-4389-field_2 {
 </div>
 <div class="ct-panel-content" data-device="desktop"><div class="ct-panel-content-inner"></div></div><div class="ct-panel-content" data-device="mobile"><div class="ct-panel-content-inner">
 <a class="site-logo-container" data-id="offcanvas-logo" href="../index.html" itemprop="url" rel="home">
-<img alt="Bridge To Better Futures Initiative" class="default-logo" decoding="async" fetchpriority="high" height="559" sizes="(max-width: 866px) 100vw, 866px" src="logo.png" srcset="logo.png" width="866"/> </a>
+<img alt="Clarehil Foundation" class="default-logo" decoding="async" fetchpriority="high" height="559" sizes="(max-width: 866px) 100vw, 866px" src="logo.png" srcset="logo.png" width="866"/> </a>
 <nav aria-label="Main menu" class="mobile-menu menu-container has-submenu" data-id="mobile-menu" data-interaction="click" data-submenu-dots="yes" data-toggle-type="type-1">
 <ul class="" id="menu-main-menu-1"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-565 current_page_item menu-item-5654"><a aria-current="page" class="ct-menu-link" href="index.html">Home</a></li>
 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2237"><span class="ct-sub-menu-parent"><a class="ct-menu-link" href="index.html#">WHO WE ARE</a><button aria-expanded="false" aria-haspopup="true" aria-label="Expand dropdown menu" class="ct-toggle-dropdown-mobile"><svg class="ct-icon toggle-icon-3" height="12" viewbox="0 0 15 15" width="12"><path d="M2.6,5.8L2.6,5.8l4.3,5C7,11,7.3,11.1,7.5,11.1S8,11,8.1,10.8l4.2-4.9l0.1-0.1c0.1-0.1,0.1-0.2,0.1-0.3c0-0.3-0.2-0.5-0.5-0.5l0,0H3l0,0c-0.3,0-0.5,0.2-0.5,0.5C2.5,5.7,2.5,5.8,2.6,5.8z"></path></svg></button></span>
@@ -229,18 +259,15 @@ input#wpforms-4389-field_2 {
 <header class="ct-header" data-id="type-1" id="header" itemscope="" itemtype="https://schema.org/WPHeader"><div data-device="desktop"><div data-column-set="1" data-row="top"><div class="ct-container"><div data-column="end" data-placements="1"><div data-items="primary">
 <div class="ct-header-text" data-id="text">
 <div class="entry-content is-layout-flow">
-<p><a style="margin-right: 20px; text-decoration: none;"> <img src="wp-content/uploads/2024/02/phone.svg" width="15"/>  +234 803 329 6687, 08072349150 </a><a href="mailto:clarehilstyles@gmail.com" style="text-decoration: none;"><img src="wp-content/uploads/2024/06/wpf-message.svg" width="15"/> clarehilstyles@gmail.com</a></p> </div>
+<p><a style="margin-right: 20px; text-decoration: none;"> <img src="wp-content/uploads/2024/02/phone.svg" width="15"/>  +234 803 329 6687, 08072349150 </a><a href="mailto:clarehilfoundation@gmail.com" style="text-decoration: none;"><img src="wp-content/uploads/2024/06/wpf-message.svg" width="15"/> clarehilfoundation@gmail.com</a></p> </div>
 </div>
 <div class="ct-header-socials" data-id="socials">
 <div class="ct-social-box" data-color="custom" data-icon-size="custom" data-icons-type="simple">
-
-
-
-<a aria-label="Facebook" data-network="facebook" href=""><span class="ct-icon-container"><svg aria-hidden="true" height="20" viewbox="0 0 20 20" width="20"><path d="M20,10.1c0-5.5-4.5-10-10-10S0,4.5,0,10.1c0,5,3.7,9.1,8.4,9.9v-7H5.9v-2.9h2.5V7.9C8.4,5.4,9.9,4,12.2,4c1.1,0,2.2.2,2.2.2v2.5h-1.3c-1.2,0-1.6,0.8-1.6,1.6v1.9h2.8L13.9,13h-2.3v7C16.3,19.2,20,15.1,20,10.1z"></path></svg></span></a><a aria-label="Instagram" data-network="instagram" href="https://www.instagram.com/clarehil_foundation" style="--official-color: #ed1376"><span class="ct-icon-container"><svg aria-hidden="true" height="20" viewbox="0 0 20 20" width="20"><circle cx="10" cy="10" r="3.3"></circle><path d="M14.2,0H5.8C2.6,0,0,2.6,0,5.8v8.3C0,17.4,2.6,20,5.8,20h8.3c3.2,0,5.8-2.6,5.8-5.8V5.8C20,2.6,17.4,0,14.2,0zM10,15c-2.8,0-5-2.2-5-5s2.2-5,5-5s5,2.2,5,5S12.8,15,10,15z M15.8,5C15.4,5,15,4.6,15,4.2s0.4-0.8,0.8-0.8s0.8,0.4,0.8,0.8S16.3,5,15.8,5z"></path></svg></span></a><a aria-label="WhatsApp" data-network="whatsapp" href="https://wa.me/2348033296687" style="--official-color: #5bba67"><span class="ct-icon-container"><svg aria-hidden="true" height="20" viewbox="0 0 20 20" width="20"><path d="M10,0C4.5,0,0,4.5,0,10c0,1.9,0.5,3.6,1.4,5.1L0.1,20l5-1.3C6.5,19.5,8.2,20,10,20c5.5,0,10-4.5,10-10S15.5,0,10,0zM6.6,5.3c.2,0,.3,0,.5,0c.2,0,.4,0,.6,0.4c.2,0.5,0.7,1.7,0.8,1.8c.1,0.1,0.1,0.3,0,0.4C8.3,8.2,8.3,8.3,8.1,8.5C8,8.6,7.9,8.8,7.8,8.9C7.7,9,7.5,9.1,7.7,9.4c.1,0.2,0.6,1.1,1.4,1.7c.9,0.8,1.7,1.1,2,1.2c.2,0.1,0.4,0.1,0.5-0.1c.1-0.2,0.6-0.7,0.8-1c.2-0.2,0.3-0.2,0.6-0.1c.2,0.1,1.4,0.7,1.7,0.8s.4,0.2,0.5,0.3c.1,0.1,0.1,0.6-0.1,1.2c-0.2,0.6-1.2,1.1-1.7,1.2c-0.5,0-0.9,0.2-3-0.6c-2.5-1-4.1-3.6-4.2-3.7c-0.1-0.2-1-1.3-1-2.6c0-1.2,0.6-1.8,0.9-2.1C6.1,5.4,6.4,5.3,6.6,5.3z"></path></svg></span></a><a aria-label="Email" data-network="email" href="mailto:clarehilstyles@gmail.com"><span class="ct-icon-container"><svg aria-hidden="true" height="20" viewbox="0 0 20 20" width="20"><path d="M1.5 3h17A1.5 1.5 0 0 1 20 4.5v11A1.5 1.5 0 0 1 18.5 17h-17A1.5 1.5 0 0 1 0 15.5v-11A1.5 1.5 0 0 1 1.5 3zm0 2v.2l8.5 5.3 8.5-5.3V5H1.5zm17 10V7.55l-8.5 5.3-8.5-5.3V15h17z"></path></svg></span></a></div>
+<a aria-label="Facebook" data-network="facebook" href=""><span class="ct-icon-container"><svg aria-hidden="true" height="20" viewbox="0 0 20 20" width="20"><path d="M20,10.1c0-5.5-4.5-10-10-10S0,4.5,0,10.1c0,5,3.7,9.1,8.4,9.9v-7H5.9v-2.9h2.5V7.9C8.4,5.4,9.9,4,12.2,4c1.1,0,2.2.2,2.2.2v2.5h-1.3c-1.2,0-1.6,0.8-1.6,1.6v1.9h2.8L13.9,13h-2.3v7C16.3,19.2,20,15.1,20,10.1z"></path></svg></span></a><a aria-label="Instagram" data-network="instagram" href="https://www.instagram.com/clarehil_foundation" style="--official-color: #ed1376"><span class="ct-icon-container"><svg aria-hidden="true" height="20" viewbox="0 0 20 20" width="20"><circle cx="10" cy="10" r="3.3"></circle><path d="M14.2,0H5.8C2.6,0,0,2.6,0,5.8v8.3C0,17.4,2.6,20,5.8,20h8.3c3.2,0,5.8-2.6,5.8-5.8V5.8C20,2.6,17.4,0,14.2,0zM10,15c-2.8,0-5-2.2-5-5s2.2-5,5-5s5,2.2,5,5S12.8,15,10,15z M15.8,5C15.4,5,15,4.6,15,4.2s0.4-0.8,0.8-0.8s0.8,0.4,0.8,0.8S16.3,5,15.8,5z"></path></svg></span></a><a aria-label="WhatsApp" data-network="whatsapp" href="https://wa.me/2348033296687" style="--official-color: #5bba67"><span class="ct-icon-container"><svg aria-hidden="true" height="20" viewbox="0 0 20 20" width="20"><path d="M10,0C4.5,0,0,4.5,0,10c0,1.9,0.5,3.6,1.4,5.1L0.1,20l5-1.3C6.5,19.5,8.2,20,10,20c5.5,0,10-4.5,10-10S15.5,0,10,0zM6.6,5.3c.2,0,.3,0,.5,0c.2,0,.4,0,.6,0.4c.2,0.5,0.7,1.7,0.8,1.8c.1,0.1,0.1,0.3,0,0.4C8.3,8.2,8.3,8.3,8.1,8.5C8,8.6,7.9,8.8,7.8,8.9C7.7,9,7.5,9.1,7.7,9.4c.1,0.2,0.6,1.1,1.4,1.7c.9,0.8,1.7,1.1,2,1.2c.2,0.1,0.4,0.1,0.5-0.1c.1-0.2,0.6-0.7,0.8-1c.2-0.2,0.3-0.2,0.6-0.1c.2,0.1,1.4,0.7,1.7,0.8s.4,0.2,0.5,0.3c.1,0.1,0.1,0.6-0.1,1.2c-0.2,0.6-1.2,1.1-1.7,1.2c-0.5,0-0.9,0.2-3-0.6c-2.5-1-4.1-3.6-4.2-3.7c-0.1-0.2-1-1.3-1-2.6c0-1.2,0.6-1.8,0.9-2.1C6.1,5.4,6.4,5.3,6.6,5.3z"></path></svg></span></a><a aria-label="Email" data-network="email" href="mailto:clarehilfoundation@gmail.com"><span class="ct-icon-container"><svg aria-hidden="true" height="20" viewbox="0 0 20 20" width="20"><path d="M1.5 3h17A1.5 1.5 0 0 1 20 4.5v11A1.5 1.5 0 0 1 18.5 17h-17A1.5 1.5 0 0 1 0 15.5v-11A1.5 1.5 0 0 1 1.5 3zm0 2v.2l8.5 5.3 8.5-5.3V5H1.5zm17 10V7.55l-8.5 5.3-8.5-5.3V15h17z"></path></svg></span></a></div>
 </div>
 </div></div></div></div><div class="ct-sticky-container"><div data-sticky="shrink"><div data-column-set="2" data-row="middle"><div class="ct-container-fluid"><div data-column="start" data-placements="1"><div data-items="primary">
 <div class="site-branding" data-id="logo" itemscope="itemscope" itemtype="https://schema.org/Organization">
-<a class="site-logo-container" href="../index.html" itemprop="url" rel="home"><img alt="Bridge To Better Futures Initiative" class="default-logo" decoding="async" height="512" sizes="(max-width: 512px) 100vw, 512px" src="logo.png" srcset="logo.png" width="512"/></a>
+<a class="site-logo-container" href="../index.html" itemprop="url" rel="home"><img alt="Clarehil Foundation" class="default-logo" decoding="async" height="512" sizes="(max-width: 512px) 100vw, 512px" src="logo.png" srcset="logo.png" width="512"/></a>
 </div>
 </div></div><div data-column="end" data-placements="1"><div data-items="primary">
 <nav aria-label="Main menu" class="header-menu-1 menu-container" data-dropdown="type-1:simple" data-id="menu" data-interaction="click:item" data-menu="type-3" data-responsive="no" id="header-menu-1" itemscope="" itemtype="https://schema.org/SiteNavigationElement">
@@ -263,7 +290,7 @@ input#wpforms-4389-field_2 {
 </ul></nav>
 </div></div></div></div></div></div></div><div data-device="mobile"><div class="ct-sticky-container"><div data-sticky="shrink"><div data-column-set="2" data-row="middle"><div class="ct-container-fluid"><div data-column="start" data-placements="1"><div data-items="primary">
 <div class="site-branding" data-id="logo">
-<a class="site-logo-container" href="../index.html" itemprop="url" rel="home"><img alt="Bridge To Better Futures Initiative" class="sticky-logo" decoding="async" height="650" sizes="(max-width: 915px) 100vw, 915px" src="logo.png" srcset="logo.png" width="915"/><img alt="Bridge To Better Futures Initiative" class="default-logo" decoding="async" height="512" sizes="(max-width: 512px) 100vw, 512px" src="logo.png" srcset="logo.png" width="512"/></a>
+<a class="site-logo-container" href="../index.html" itemprop="url" rel="home"><img alt="Clarehil Foundation" class="sticky-logo" decoding="async" height="650" sizes="(max-width: 915px) 100vw, 915px" src="logo.png" srcset="logo.png" width="915"/><img alt="Clarehil Foundation" class="default-logo" decoding="async" height="512" sizes="(max-width: 512px) 100vw, 512px" src="logo.png" srcset="logo.png" width="512"/></a>
 </div>
 </div></div><div data-column="end" data-placements="1"><div data-items="primary">
 <button aria-label="Menu" class="ct-header-trigger ct-toggle" data-design="simple" data-id="trigger" data-label="right" data-toggle-panel="#offcanvas">
@@ -317,12 +344,12 @@ input#wpforms-4389-field_2 {
 </div>
 </div>
 </div>
-<div class="elementor-element elementor-element-11329bc e-con-full e-flex e-con e-parent" data-element_type="container" data-id="11329bc" data-settings='{"background_background":"classic"}'>
+<div class="elementor-element elementor-element-11329bc e-con-full e-flex e-con e-parent" data-clarehil-image-input="img-src" data-element_type="container" data-id="11329bc" data-settings='{"background_background":"classic"}'><img alt="" aria-hidden="true" class="clarehil-manual-image" src="gallery.img/women empowerment/IMG-20260927-WA0033.jpg"/>
 <div class="elementor-element elementor-element-7d2eb32 e-flex e-con-boxed e-con e-child" data-element_type="container" data-id="7d2eb32">
 <div class="e-con-inner">
 <div class="elementor-element elementor-element-a658042 elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-widget elementor-widget-heading" data-element_type="widget" data-id="a658042" data-widget_type="heading.default">
 <div class="elementor-widget-container">
-<h5 class="elementor-heading-title elementor-size-default">We serve as a bridge for people  <b style="color:#ca0000">in underserved communities </b> especially to move from where they are to where they are meant to be.</h5> </div>
+<h5 class="">Clarehil Foundation home to people <b style="color:#ca0000">in underserved communities</b>, helping them move from where they are to where they are meant to be.</h5> </div>
 </div>
 </div>
 </div>
@@ -362,7 +389,7 @@ We welcome collaboration with:
 Together, we can scale impact and transform more lives..</p> </div>
 </div>
 </div>
-<div class="elementor-element elementor-element-4f2d259 e-con-full e-flex e-con e-child" data-element_type="container" data-id="4f2d259" data-settings='{"background_background":"classic"}'>
+<div class="elementor-element elementor-element-4f2d259 e-con-full e-flex e-con e-child" data-clarehil-image-input="img-src" data-element_type="container" data-id="4f2d259" data-settings='{"background_background":"classic"}'><img alt="" aria-hidden="true" class="clarehil-manual-image" src="gallery.img/schools/IMG-20260918-WA0026.jpg"/>
 <div class="elementor-element elementor-element-5b7b119 elementor-widget elementor-widget-spacer" data-element_type="widget" data-id="5b7b119" data-widget_type="spacer.default">
 <div class="elementor-widget-container">
 <div class="elementor-spacer">
@@ -375,7 +402,7 @@ Together, we can scale impact and transform more lives..</p> </div>
 </div>
 <div class="elementor-element elementor-element-b8f6057 e-flex e-con-boxed e-con e-parent" data-element_type="container" data-id="b8f6057">
 <div class="e-con-inner">
-<div class="elementor-element elementor-element-ee6c385 e-con-full e-flex e-con e-child" data-element_type="container" data-id="ee6c385" data-settings='{"background_background":"classic"}'>
+<div class="elementor-element elementor-element-ee6c385 e-con-full e-flex e-con e-child" data-clarehil-image-input="img-src" data-element_type="container" data-id="ee6c385" data-settings='{"background_background":"classic"}'><img alt="" aria-hidden="true" class="clarehil-manual-image" src="gallery.img/schools/IMG-20260918-WA0028.jpg"/>
 <div class="elementor-element elementor-element-838413f elementor-widget elementor-widget-spacer" data-element_type="widget" data-id="838413f" data-widget_type="spacer.default">
 <div class="elementor-widget-container">
 <div class="elementor-spacer">
@@ -454,28 +481,57 @@ Teachers, parents, and community members appreciated the empowerment programs or
 </div>
 </div>
 </article></div>
+<section aria-labelledby="clarehil-testimonials-title" class="clarehil-testimonials">
+<div class="clarehil-testimonials__heading">
+<h2 id="clarehil-testimonials-title">Testimonials</h2>
+<p>Stories of support, empowerment, opportunity and positive community impact through Clarehil Foundation programmes.</p>
+</div>
+<div class="clarehil-testimonials__grid">
+<article class="clarehil-testimonial-card">
+<img alt="" aria-hidden="true" class="clarehil-testimonial-avatar" src="testimonials.img/IMG-20260927-WA0032.jpg"/>
+<h3>Sunday Victor Udeke</h3>
+<p class="clarehil-testimonial-role">Surgical Care Support</p>
+<p class="clarehil-testimonial-text">Providing financial and medical support for a successful mandibulectomy surgery, helping beneficiaries access essential treatment and improve their quality of life.</p>
+</article>
+<article class="clarehil-testimonial-card">
+<img alt="" aria-hidden="true" class="clarehil-testimonial-avatar" src="testimonials.img/IMG-20260927-WA0026~2.jpg"/>
+<h3>Ezeanodo Sylvia</h3>
+<p class="clarehil-testimonial-role">Financial Support</p>
+<p class="clarehil-testimonial-text">Providing financial assistance to individuals to pursue their education, goals, and dreams and build a brighter future.</p>
+</article>
+<article class="clarehil-testimonial-card">
+<img alt="" aria-hidden="true" class="clarehil-testimonial-avatar" src="testimonials.img/IMG-20260927-WA0008.jpg"/>
+<h3>Mr Sunday Onuigbo</h3>
+<p class="clarehil-testimonial-role">Vision Care Support</p>
+<p class="clarehil-testimonial-text">Providing medical treatment and support to individuals experiencing vision loss, helping them improve their eye health and quality of life.</p>
+</article>
+<article class="clarehil-testimonial-card">
+<img alt="" aria-hidden="true" class="clarehil-testimonial-avatar" src="testimonials.img/IMG-20260927-WA0013.jpg"/>
+<h3>Mrs Gloria Iloegbu</h3>
+<p class="clarehil-testimonial-role">Youth &amp; Women Empowerment</p>
+<p class="clarehil-testimonial-text">Empowering young people and women through skill acquisition and personal development to build confidence, independence, and sustainable livelihoods.</p>
+</article>
+<article class="clarehil-testimonial-card">
+<img alt="" aria-hidden="true" class="clarehil-testimonial-avatar" src="testimonials.img/IMG-20260927-WA0017~2.jpg"/>
+<h3>Golden Spring International Academy Awka</h3>
+<p class="clarehil-testimonial-role">Educational Support</p>
+<p class="clarehil-testimonial-text">Supporting International Academy through book donations and educational presentations to promote learning, literacy, and academic development.</p>
+</article>
+</div>
+</section>
 </main></div>
-
-
-
-
 <footer class="ct-footer" data-id="type-1" id="footer" itemscope="" itemtype="https://schema.org/WPFooter"><div data-row="top"><div class="ct-container" data-columns-divider="md"><div data-column="widget-area-4"><div class="ct-widget is-layout-flow widget_block" id="block-91"><h6>WHAT WE DO</h6>
 </div><div class="ct-widget is-layout-flow widget_block" id="block-92"><a href="index.html@p=1936.html">EMPOWERMENT</a></div><div class="ct-widget is-layout-flow widget_block" id="block-93"><a href="index.html@p=1664.html">EDUCATION</a></div>
-<div class="ct-widget is-layout-flow widget_block" id="block-95"><div data-column="widget-area-6"><div class="ct-widget is-layout-flow widget_block" id="block-97"><h6>PAGES</h6></div><div class="ct-widget is-layout-flow widget_block" id="block-99"><a href="index.html@p=1970.html"> ABOUT US</a></div><div class="ct-widget is-layout-flow widget_block" id="block-100"><a href="index.html@p=1971.html">OUR TEAM</a></div><div class="ct-widget is-layout-flow widget_block" id="block-102"><a href="index.html@p=2229.html">PROGRAMMES</a></div></div><div data-column="widget-area-5"><div class="ct-widget is-layout-flow widget_block" id="block-37"><h6>CONTACT</h6></div><div class="ct-widget is-layout-flow widget_block" id="block-58"><a>+234 803 329 6687, 08072349150</a></div><div class="ct-widget is-layout-flow widget_block" id="block-59"><a href="mailto:clarehilstyles@gmail.com">clarehilstyles@gmail.com</a></div><div class="ct-widget is-layout-flow widget_block" id="block-107"><div class="ct-block-wrapper">
+<div class="ct-widget is-layout-flow widget_block" id="block-95"><div data-column="widget-area-6"><div class="ct-widget is-layout-flow widget_block" id="block-97"><h6>PAGES</h6></div><div class="ct-widget is-layout-flow widget_block" id="block-99"><a href="index.html@p=1970.html"> ABOUT US</a></div><div class="ct-widget is-layout-flow widget_block" id="block-100"><a href="index.html@p=1971.html">OUR TEAM</a></div><div class="ct-widget is-layout-flow widget_block" id="block-102"><a href="index.html@p=2229.html">PROGRAMMES</a></div></div><div data-column="widget-area-5"><div class="ct-widget is-layout-flow widget_block" id="block-37"><h6>CONTACT</h6></div><div class="ct-widget is-layout-flow widget_block" id="block-58"><a>+234 803 329 6687, 08072349150</a></div><div class="ct-widget is-layout-flow widget_block" id="block-59"><a href="mailto:clarehilfoundation@gmail.com">clarehilfoundation@gmail.com</a></div><div class="ct-widget is-layout-flow widget_block" id="block-107"><div class="ct-block-wrapper">
 <div class="ct-socials-block" style="--theme-icon-size:15px;"></div>
 </div></div></div></div></div><div data-row="middle"><div class="ct-container"><div data-column="widget-area-1"><div class="ct-widget is-layout-flow widget_block" id="block-10"><div class="ct-block-wrapper">
 <div class="ct-socials-block" style="--theme-icon-size:36px;">
 <div class="ct-social-box" data-color="official" data-icons-type="simple">
-
-
-
-
-
-<a aria-label="Facebook" data-network="facebook" href=""><span class="ct-icon-container"><svg aria-hidden="true" height="20" viewbox="0 0 20 20" width="20"><path d="M20,10.1c0-5.5-4.5-10-10-10S0,4.5,0,10.1c0,5,3.7,9.1,8.4,9.9v-7H5.9v-2.9h2.5V7.9C8.4,5.4,9.9,4,12.2,4c1.1,0,2.2.2,2.2.2v2.5h-1.3c-1.2,0-1.6,0.8-1.6,1.6v1.9h2.8L13.9,13h-2.3v7C16.3,19.2,20,15.1,20,10.1z"></path></svg></span></a><a aria-label="Instagram" data-network="instagram" href="https://www.instagram.com/clarehil_foundation" style="--official-color: #ed1376"><span class="ct-icon-container"><svg aria-hidden="true" height="20" viewbox="0 0 20 20" width="20"><circle cx="10" cy="10" r="3.3"></circle><path d="M14.2,0H5.8C2.6,0,0,2.6,0,5.8v8.3C0,17.4,2.6,20,5.8,20h8.3c3.2,0,5.8-2.6,5.8-5.8V5.8C20,2.6,17.4,0,14.2,0zM10,15c-2.8,0-5-2.2-5-5s2.2-5,5-5s5,2.2,5,5S12.8,15,10,15z M15.8,5C15.4,5,15,4.6,15,4.2s0.4-0.8,0.8-0.8s0.8,0.4,0.8,0.8S16.3,5,15.8,5z"></path></svg></span></a><a aria-label="WhatsApp" data-network="whatsapp" href="https://wa.me/2348033296687" style="--official-color: #5bba67"><span class="ct-icon-container"><svg aria-hidden="true" height="20" viewbox="0 0 20 20" width="20"><path d="M10,0C4.5,0,0,4.5,0,10c0,1.9,0.5,3.6,1.4,5.1L0.1,20l5-1.3C6.5,19.5,8.2,20,10,20c5.5,0,10-4.5,10-10S15.5,0,10,0zM6.6,5.3c.2,0,.3,0,.5,0c.2,0,.4,0,.6,0.4c.2,0.5,0.7,1.7,0.8,1.8c.1,0.1,0.1,0.3,0,0.4C8.3,8.2,8.3,8.3,8.1,8.5C8,8.6,7.9,8.8,7.8,8.9C7.7,9,7.5,9.1,7.7,9.4c.1,0.2,0.6,1.1,1.4,1.7c.9,0.8,1.7,1.1,2,1.2c.2,0.1,0.4,0.1,0.5-0.1c.1-0.2,0.6-0.7,0.8-1c.2-0.2,0.3-0.2,0.6-0.1c.2,0.1,1.4,0.7,1.7,0.8s.4,0.2,0.5,0.3c.1,0.1,0.1,0.6-0.1,1.2c-0.2,0.6-1.2,1.1-1.7,1.2c-0.5,0-0.9,0.2-3-0.6c-2.5-1-4.1-3.6-4.2-3.7c-0.1-0.2-1-1.3-1-2.6c0-1.2,0.6-1.8,0.9-2.1C6.1,5.4,6.4,5.3,6.6,5.3z"></path></svg></span></a><a aria-label="Email" data-network="email" href="mailto:clarehilstyles@gmail.com"><span class="ct-icon-container"><svg aria-hidden="true" height="20" viewbox="0 0 20 20" width="20"><path d="M1.5 3h17A1.5 1.5 0 0 1 20 4.5v11A1.5 1.5 0 0 1 18.5 17h-17A1.5 1.5 0 0 1 0 15.5v-11A1.5 1.5 0 0 1 1.5 3zm0 2v.2l8.5 5.3 8.5-5.3V5H1.5zm17 10V7.55l-8.5 5.3-8.5-5.3V15h17z"></path></svg></span></a></div>
+<a aria-label="Facebook" data-network="facebook" href=""><span class="ct-icon-container"><svg aria-hidden="true" height="20" viewbox="0 0 20 20" width="20"><path d="M20,10.1c0-5.5-4.5-10-10-10S0,4.5,0,10.1c0,5,3.7,9.1,8.4,9.9v-7H5.9v-2.9h2.5V7.9C8.4,5.4,9.9,4,12.2,4c1.1,0,2.2.2,2.2.2v2.5h-1.3c-1.2,0-1.6,0.8-1.6,1.6v1.9h2.8L13.9,13h-2.3v7C16.3,19.2,20,15.1,20,10.1z"></path></svg></span></a><a aria-label="Instagram" data-network="instagram" href="https://www.instagram.com/clarehil_foundation" style="--official-color: #ed1376"><span class="ct-icon-container"><svg aria-hidden="true" height="20" viewbox="0 0 20 20" width="20"><circle cx="10" cy="10" r="3.3"></circle><path d="M14.2,0H5.8C2.6,0,0,2.6,0,5.8v8.3C0,17.4,2.6,20,5.8,20h8.3c3.2,0,5.8-2.6,5.8-5.8V5.8C20,2.6,17.4,0,14.2,0zM10,15c-2.8,0-5-2.2-5-5s2.2-5,5-5s5,2.2,5,5S12.8,15,10,15z M15.8,5C15.4,5,15,4.6,15,4.2s0.4-0.8,0.8-0.8s0.8,0.4,0.8,0.8S16.3,5,15.8,5z"></path></svg></span></a><a aria-label="WhatsApp" data-network="whatsapp" href="https://wa.me/2348033296687" style="--official-color: #5bba67"><span class="ct-icon-container"><svg aria-hidden="true" height="20" viewbox="0 0 20 20" width="20"><path d="M10,0C4.5,0,0,4.5,0,10c0,1.9,0.5,3.6,1.4,5.1L0.1,20l5-1.3C6.5,19.5,8.2,20,10,20c5.5,0,10-4.5,10-10S15.5,0,10,0zM6.6,5.3c.2,0,.3,0,.5,0c.2,0,.4,0,.6,0.4c.2,0.5,0.7,1.7,0.8,1.8c.1,0.1,0.1,0.3,0,0.4C8.3,8.2,8.3,8.3,8.1,8.5C8,8.6,7.9,8.8,7.8,8.9C7.7,9,7.5,9.1,7.7,9.4c.1,0.2,0.6,1.1,1.4,1.7c.9,0.8,1.7,1.1,2,1.2c.2,0.1,0.4,0.1,0.5-0.1c.1-0.2,0.6-0.7,0.8-1c.2-0.2,0.3-0.2,0.6-0.1c.2,0.1,1.4,0.7,1.7,0.8s.4,0.2,0.5,0.3c.1,0.1,0.1,0.6-0.1,1.2c-0.2,0.6-1.2,1.1-1.7,1.2c-0.5,0-0.9,0.2-3-0.6c-2.5-1-4.1-3.6-4.2-3.7c-0.1-0.2-1-1.3-1-2.6c0-1.2,0.6-1.8,0.9-2.1C6.1,5.4,6.4,5.3,6.6,5.3z"></path></svg></span></a><a aria-label="Email" data-network="email" href="mailto:clarehilfoundation@gmail.com"><span class="ct-icon-container"><svg aria-hidden="true" height="20" viewbox="0 0 20 20" width="20"><path d="M1.5 3h17A1.5 1.5 0 0 1 20 4.5v11A1.5 1.5 0 0 1 18.5 17h-17A1.5 1.5 0 0 1 0 15.5v-11A1.5 1.5 0 0 1 1.5 3zm0 2v.2l8.5 5.3 8.5-5.3V5H1.5zm17 10V7.55l-8.5 5.3-8.5-5.3V15h17z"></path></svg></span></a></div>
 </div>
 </div></div></div><div data-column="ghost"></div><div data-column="ghost"></div></div></div><div data-row="bottom" style="border-radius: 35px;"><div class="ct-container-fluid"><div data-column="copyright">
 <div class="ct-footer-copyright" data-id="copyright">
-<p>Copyright © 2024 Bridge to Better Futures Initiative
+<p>Copyright © 2024 Clarehil Foundation
 All rights reserved. Powered by <a href="https://www.sundimension.ng" rel="noopener" style="font-weight: bold;" target="_blank" title="">SUNDIMENSION</a></p></div>
 </div></div></div></div></div></footer>
 <script type="speculationrules">

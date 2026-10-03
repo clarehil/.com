@@ -163,30 +163,124 @@
       }
     })();
 
-    // Static-export forms: validate locally and provide a dependable email fallback.
+    // FormSubmit AJAX forms: submit without redirecting away from the website.
+    // Both the dashboard email form and the contact form use the same handler.
     document.querySelectorAll('form.wpforms-form').forEach(function(form){
       if(form.dataset.b2bFormBound)return;
       form.dataset.b2bFormBound='1';
-      form.addEventListener('submit',function(e){
+
+      form.addEventListener('submit', async function(e){
+        // Capture the submit before the exported WordPress/WPForms scripts can
+        // redirect or try to post back to the old WordPress URL.
         e.preventDefault();
+        e.stopImmediatePropagation();
+
+        var submitButton=form.querySelector('button[type="submit"],input[type="submit"]');
+        var spinner=form.querySelector('.wpforms-submit-spinner');
+        var originalText=submitButton ? (submitButton.textContent || submitButton.value || 'Submit').trim() : 'Submit';
+        var isContact=form.id==='wpforms-form-5355';
+        var emailField=form.querySelector('#wpforms-4389-field_2, #wpforms-5355-field_7');
+        var email=emailField ? String(emailField.value||'').trim() : '';
         var required=form.querySelectorAll('[required]');
         var invalid=false;
-        required.forEach(function(field){if(!String(field.value||'').trim()){field.setAttribute('aria-invalid','true');invalid=true;}else field.removeAttribute('aria-invalid');});
-        if(invalid){showMsg(form,'Please complete the required fields before submitting.','error');return;}
-        var vals=[];
-        form.querySelectorAll('input:not([type="hidden"]),textarea,select').forEach(function(f){
-          if(f.value && f.name) vals.push((f.getAttribute('aria-label')||f.name)+': '+f.value);
+
+        required.forEach(function(field){
+          var value=String(field.value||'').trim();
+          var bad=!value || (field.type==='email' && !field.validity.valid);
+          field.toggleAttribute('aria-invalid',bad);
+          if(bad)invalid=true;
         });
-        var subject=encodeURIComponent('Website enquiry - Clarehil Foundation');
-        var body=encodeURIComponent(vals.join('\\n'));
-        showMsg(form,'Thank you. Your message is ready to be sent. Your email app will open now.','success');
-        window.setTimeout(function(){window.location.href='mailto:clarehilstyles@gmail.com?subject='+subject+'&body='+body;},350);
-      });
+
+        if(invalid){
+          showFormToast('Please complete the required fields correctly.', 'error');
+          return;
+        }
+
+        // The old exported WPForms forms contain hidden anti-spam text fields.
+        // If a bot fills one, do not send the submission.
+        var honeypot=isContact
+          ? form.querySelector('#wpforms-5355-field_2')
+          : form.querySelector('#wpforms-4389-field_1');
+        if(honeypot && String(honeypot.value||'').trim()){
+          showFormToast('Unable to submit this form. Please try again.', 'error');
+          return;
+        }
+
+        var payload={
+          _subject: isContact ? 'New Contact Form Message - Clarehil Foundation' : 'New Dashboard Email Submission - Clarehil Foundation',
+          _template: 'table',
+          _captcha: 'false',
+          _honey: '',
+          _url: window.location.href,
+          email: email
+        };
+
+        if(isContact){
+          payload.name=String((form.querySelector('#wpforms-5355-field_1')||{}).value||'').trim();
+          payload.phone=String((form.querySelector('#wpforms-5355-field_4')||{}).value||'').trim();
+          payload.heard_about=String((form.querySelector('#wpforms-5355-field_2')||{}).value||'').trim();
+          payload.message=String((form.querySelector('#wpforms-5355-field_3')||{}).value||'').trim();
+        }else{
+          payload.name='Dashboard email submission';
+          payload.message='A visitor submitted their email address through the dashboard form.';
+        }
+        payload._replyto=email;
+
+        if(submitButton){
+          submitButton.disabled=true;
+          if('value' in submitButton)submitButton.value='Sending...';
+          submitButton.textContent='Sending...';
+          submitButton.setAttribute('aria-busy','true');
+        }
+        if(spinner)spinner.style.display='inline-block';
+
+        try{
+          var response=await fetch('https://formsubmit.co/ajax/clarehilfoundation@gmail.com',{
+            method:'POST',
+            headers:{'Content-Type':'application/json','Accept':'application/json'},
+            body:JSON.stringify(payload)
+          });
+
+          var data={};
+          try{data=await response.json();}catch(parseError){data={};}
+
+          if(!response.ok || data.success===false){
+            throw new Error(data.message || 'Form submission failed.');
+          }
+
+          form.reset();
+          form.querySelectorAll('[aria-invalid="true"]').forEach(function(field){field.removeAttribute('aria-invalid');});
+          showFormToast(isContact ? 'Thank you! Your message has been sent successfully.' : 'Thank you! Your email has been submitted successfully.', 'success');
+        }catch(error){
+          console.error('FormSubmit error:',error);
+          showFormToast('Sorry, your submission could not be sent. Please try again.', 'error');
+        }finally{
+          if(submitButton){
+            submitButton.disabled=false;
+            if('value' in submitButton)submitButton.value=originalText;
+            submitButton.textContent=originalText;
+            submitButton.removeAttribute('aria-busy');
+          }
+          if(spinner)spinner.style.display='none';
+        }
+      }, true);
     });
-    function showMsg(form,text,type){
-      var old=form.querySelector('.b2b-form-success,.b2b-form-error');if(old)old.remove();
-      var d=document.createElement('div');d.className=type==='error'?'b2b-form-error':'b2b-form-success';d.textContent=text;
-      form.appendChild(d);
+
+    function showFormToast(text,type){
+      var old=document.querySelector('.b2b-form-toast');
+      if(old)old.remove();
+      var toast=document.createElement('div');
+      toast.className='b2b-form-toast b2b-form-toast--'+(type==='error'?'error':'success');
+      toast.setAttribute('role',type==='error'?'alert':'status');
+      toast.setAttribute('aria-live',type==='error'?'assertive':'polite');
+      toast.textContent=text;
+      document.body.appendChild(toast);
+      requestAnimationFrame(function(){toast.classList.add('is-visible');});
+      window.setTimeout(function(){
+        toast.classList.remove('is-visible');
+        window.setTimeout(function(){if(toast.parentNode)toast.remove();},250);
+      },4500);
     }
+
   });
 })();
