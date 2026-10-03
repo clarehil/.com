@@ -194,6 +194,42 @@ input#wpforms-4389-field_2 {
 				}
 			</style> <link href="wp-content/plugins/fluentform/assets/css/fluent-forms-elementor-widget.css@ver=5.2.9.css" id="fluentform-elementor-widget-css" media="all" rel="stylesheet"/>
 <link href="modern-style.css" rel="stylesheet"/>
+<style id="team-layout-fix">
+/* Layout-only fix for the team cards: centering + smaller card size. No colors/fonts/etc. changed. */
+.elementor .elementor-element.elementor-element-ff85bb8 > .e-con-inner{
+  display:flex !important; flex-direction:row !important; flex-wrap:wrap !important;
+  justify-content:center !important; align-items:flex-start !important;
+  gap:30px !important; width:100% !important; max-width:1100px !important;
+  margin-left:auto !important; margin-right:auto !important; box-sizing:border-box;
+}
+.elementor .elementor-element.elementor-element-ff85bb8 > .e-con-inner > .e-con.e-child{
+  flex:0 1 300px !important; width:100% !important; max-width:300px !important; min-width:0 !important;
+  margin:0 auto !important; box-sizing:border-box;
+  display:flex !important; flex-direction:column !important; align-items:center !important; text-align:center !important;
+}
+.elementor-element-ff85bb8 .elementor-widget{ width:100% !important; max-width:100% !important; margin-left:auto; margin-right:auto; }
+.elementor-element-ff85bb8 .elementor-widget-container{ text-align:center; }
+.elementor-element-ff85bb8 .elementor-image-box-wrapper{
+  display:flex; flex-direction:column; align-items:center; text-align:center; width:100%;
+}
+.elementor-element-ff85bb8 .elementor-image-box-img{
+  display:block; width:100% !important; max-width:220px; margin:0 auto 15px !important;
+}
+.elementor-element-ff85bb8 .elementor-image-box-img img{
+  display:block; width:100% !important; height:auto !important; margin:0 auto; object-fit:cover;
+}
+.elementor-element-ff85bb8 .elementor-image-box-content{ width:100%; text-align:center; margin:0 auto; }
+.elementor-element-ff85bb8 .elementor-image-box-title,
+.elementor-element-ff85bb8 .elementor-image-box-description{ text-align:center; margin-left:auto; margin-right:auto; }
+.elementor-element-ff85bb8 .htmega-toggle-area,
+.elementor-element-ff85bb8 .htmega-toggle-button,
+.elementor-element-ff85bb8 .htmega_custom_content{ text-align:center; width:100%; margin-left:auto; margin-right:auto; }
+.elementor-element-ff85bb8 .htmega_custom_content{ overflow-wrap:break-word; word-wrap:break-word; }
+.elementor-element-ff85bb8 .htmega_custom_content li{ list-style-position:inside; }
+@media (max-width:767px){
+  .elementor .elementor-element.elementor-element-ff85bb8 > .e-con-inner > .e-con.e-child{ flex-basis:100% !important; max-width:320px !important; }
+}
+</style>
 </meta></link></meta></link></link></meta></head>
 <body class="wp-singular page-template-default page page-id-1971 wp-custom-logo wp-embed-responsive wp-theme-blocksy wp-child-theme-blocksy-child elementor-default elementor-kit-1476 elementor-page elementor-page-1971 ct-elementor-default-template" data-footer="type-1" data-header="type-1:sticky" data-link="type-2" data-prefix="single_page" itemscope="itemscope" itemtype="https://schema.org/WebPage">
 <a class="skip-link screen-reader-text" href="index.html@p=1971.html#main">Skip to content</a><div class="ct-drawer-canvas" data-location="start"><div aria-label="Offcanvas modal" class="ct-panel ct-header" data-behaviour="right-side" id="offcanvas" inert=""><div class="ct-panel-inner">
@@ -304,13 +340,21 @@ input#wpforms-4389-field_2 {
 <div class="elementor-element elementor-element-5f7c07d e-con-full e-flex e-con e-child" data-element_type="container" data-id="5f7c07d">
 <div class="elementor-element elementor-element-402b1e4 elementor-position-top elementor-widget elementor-widget-image-box" data-element_type="widget" data-id="402b1e4" data-widget_type="image-box.default">
 <div class="elementor-widget-container">
-<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img alt="" class="attachment-full size-full wp-image-5727" decoding="async" fetchpriority="high" height="1080" sizes="(max-width: 988px) 100vw, 988px" src="img/file_000c088.png" srcset="img/file_000c088.png" width="988"/></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Onyinyechi Ogechukwu Nwabunike</h3><p class="elementor-image-box-description">Founder</p></div></div> </div>
+<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img alt="" class="attachment-full size-full wp-image-5727" decoding="async" fetchpriority="high" height="1080" sizes="(max-width: 988px) 100vw, 988px" src="img/file_000c088.png" srcset="img/file_000c088.png" width="988"/></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Onyinyechi Ogechukwu Nwabunike, </h3>RN, BSc, PGDE<p class="elementor-image-box-description">Founder</p></div></div> </div>
 </div>
 <div class="elementor-element elementor-element-1a40788 elementor-widget elementor-widget-htmega-toggle-addons" data-element_type="widget" data-id="1a40788" data-widget_type="htmega-toggle-addons.default">
 <div class="elementor-widget-container">
 <div class="htmega-toggle-area">
 <div class="htmega-toggle-content-1a40788" style="display: none;">
-<div class="htmega_custom_content"><p class="p1">Onyinyechi Ogechukwu Nwabunike is a Nigerian humanitarian, public health advocate, community development professional, and Founder &amp; Executive Director of Clarehil Literacy Development Foundation, a nonprofit organization dedicated to empowering girls, women, children, and underserved communities through health education, literacy development, humanitarian outreach, and sustainable community initiatives.
+<div class="htmega_custom_content">
+    
+    <p class="p1"><li style="color: #0018ffac;">ABOUT THE FOUNDER</li>
+    
+    Founder & Executive Director
+Public Health & Community Development Advocate | Humanitarian | Health Educator
+PhD Candidate</p>
+    
+    <p class="p1">Onyinyechi Ogechukwu Nwabunike is a Nigerian humanitarian, public health advocate, community development professional, and Founder &amp; Executive Director of Clarehil Literacy Development Foundation, a nonprofit organization dedicated to empowering girls, women, children, and underserved communities through health education, literacy development, humanitarian outreach, and sustainable community initiatives.
 
 With academic training in Public Administration, Education, and Nursing, she brings a multidisciplinary perspective to addressing social challenges through leadership, education, and public health. Her work focuses on promoting preventive healthcare, improving health literacy, advancing women’s empowerment, supporting youth development, and strengthening community resilience.
 
@@ -320,7 +364,7 @@ Beyond humanitarian service, she is an author and advocate for lifelong learning
 
 She is committed to working with governments, development partners, international organizations, and the private sector to advance public health, strengthen communities, and promote inclusive development across Africa.
 
-⸻</p><p class="p1"><li>LEADERSHIP JOURNEY</li>
+⸻</p><p class="p1"><li style="color: #0018ffac;">LEADERSHIP JOURNEY</li>
 
 My leadership journey began with a simple conviction: that every individual deserves the opportunity to live with dignity, access quality education, and enjoy good health.
 
@@ -331,14 +375,14 @@ Each outreach programme, community engagement, and partnership has strengthened 
 As I complete my nursing education, I see healthcare as an extension of my humanitarian mission. My vision is to integrate clinical knowledge, public health, and community development to create lasting impact, particularly among vulnerable populations.
 
 I remain committed to continuous learning, ethical leadership, and building partnerships that inspire positive transformation across Africa.</p>
-<p class="p1"><li>MY VISION FOR AFRICA</li>
+<p class="p1"><li style="color: #0018ffac;">MY VISION FOR AFRICA</li>
 
 I envision an Africa where every child has access to quality education, every woman is empowered to achieve her full potential, and every community enjoys equitable access to quality healthcare and opportunities for sustainable development.
 
 I believe Africa’s greatest strength lies in its people. By investing in education, public health, ethical leadership, innovation, and strategic partnerships, we can build resilient communities, reduce inequalities, and unlock the continent’s enormous potential.
 
 My vision is to contribute to an Africa where humanitarian service and sustainable development work hand in hand—where governments, civil society, businesses, and international organizations collaborate to create lasting solutions that improve lives and strengthen future generations.</p>
-<p class="p1"><li>MY HUMANITARIAN PHILOSOPHY</li>
+<p class="p1"><li style="color: #0018ffac;">MY HUMANITARIAN PHILOSOPHY</li>
 
 I believe that true humanitarian service is founded on compassion, dignity, integrity, and a genuine commitment to improving the lives of others.
 
@@ -423,14 +467,14 @@ it is a lifelong commitment to serving humanity with excellence, compassion, and
 <div class="elementor-element elementor-element-dcccff1 e-con-full e-flex e-con e-child" data-element_type="container" data-id="dcccff1">
 <div class="elementor-element elementor-element-f39afce elementor-position-top elementor-widget elementor-widget-image-box" data-element_type="widget" data-id="f39afce" data-widget_type="image-box.default">
 <div class="elementor-widget-container">
-<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img alt="" class="attachment-full size-full wp-image-5725" decoding="async" height="375" loading="lazy" sizes="(max-width: 375px) 100vw, 375px" src="img/file_007bb48.png" srcset="img/file_007bb48.png" width="375"/></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Sir Mark Effiong</h3><p class="elementor-image-box-description">Executive Assistant</p></div></div> </div>
+<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img alt="" class="attachment-full size-full wp-image-5725" decoding="async" height="375" loading="lazy" sizes="(max-width: 375px) 100vw, 375px" src="img/file_007bb48.png" srcset="img/file_007bb48.png" width="375"/></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Dr. Cyprian Nwabunike</h3><p class="elementor-image-box-description">Director</p></div></div> </div>
 </div>
 <div class="elementor-element elementor-element-a180138 elementor-widget elementor-widget-htmega-toggle-addons" data-element_type="widget" data-id="a180138" data-widget_type="htmega-toggle-addons.default">
 <div class="elementor-widget-container">
 <div class="htmega-toggle-area">
 <div class="htmega-toggle-content-a180138" style="display: none;">
-<div class="htmega_custom_content"><p class="p1">Sir Mark Effiong has contributed immensely to the growth and impact of Clarehil Literacy Development Foundation through his continuous mentorship and support for educational programs. His dedication and guidance have greatly influenced the foundation’s mission and activities.</p>
-<p class="p1">He has also made a remarkable impact in the area of women empowerment by supporting initiatives and programs aimed at encouraging, educating, and empowering women within the community.</p></div> </div>
+<div class="htmega_custom_content"><p class="p1">Dr. Cyprian Nwabunike has contributed immensely to the growth and impact of Clarehil Literacy Development Foundation through his continuous mentorship and support for educational programs. His dedication and guidance have greatly influenced the foundation’s mission and activities.</p>
+<p class="p1"> He has also made a remarkable impact in the area of women empowerment by supporting initiatives and programs aimed at encouraging, educating, and empowering women within the community.</p></div> </div>
 <div class="htmega-toggle-button">
 <a class="togglebutton-a180138 normal_btn" href="index.html@p=1971.html#">Read More <svg class="e-font-icon-svg e-fas-angle-down" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path></svg></a><a class="togglebutton-a180138 opened_btn" href="index.html@p=1971.html#">Read less<svg class="e-font-icon-svg e-fas-angle-up" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"></path></svg></a> </div>
 </div>
@@ -450,14 +494,13 @@ it is a lifelong commitment to serving humanity with excellence, compassion, and
 <div class="elementor-element elementor-element-dfb73bd e-con-full e-flex e-con e-child" data-element_type="container" data-id="dfb73bd">
 <div class="elementor-element elementor-element-de11546 elementor-position-top elementor-widget elementor-widget-image-box" data-element_type="widget" data-id="de11546" data-widget_type="image-box.default">
 <div class="elementor-widget-container">
-<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img alt="" class="attachment-full size-full wp-image-5729" decoding="async" height="314" loading="lazy" sizes="(max-width: 264px) 100vw, 264px" src="img/file_0044e54.png" srcset="img/file_0044e54.png" width="264"/></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Barr. Osita Ibegbunam James</h3><p class="elementor-image-box-description">Legal &amp; Compliance Adviser</p></div></div> </div>
+<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img alt="" class="attachment-full size-full wp-image-5729" decoding="async" height="314" loading="lazy" sizes="(max-width: 264px) 100vw, 264px" src="img/file_0044e54.png" srcset="img/file_0044e54.png" width="264"/></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Sir Mark Effiong </h3><p class="elementor-image-box-description"> Director</p></div></div> </div>
 </div>
 <div class="elementor-element elementor-element-474dee8 elementor-widget elementor-widget-htmega-toggle-addons" data-element_type="widget" data-id="474dee8" data-widget_type="htmega-toggle-addons.default">
 <div class="elementor-widget-container">
 <div class="htmega-toggle-area">
 <div class="htmega-toggle-content-474dee8" style="display: none;">
-<div class="htmega_custom_content"><p class="p1">Team 
-Mark Effiong is a pilot with American Airlines who has contributed immensely to Clarehil Literacy Development Foundation through his support and partnership in various outreach programs. He is the founder of VIFADAD Medical Mission and has collaborated with the foundation in organizing book presentations and medical outreaches.</p><p class="p1"> One of these impactful outreaches was held at St. Charles Orphanage, Anua, Akwa Ibom, where free medical treatments were provided to the children. The initiative also included an educational tour to the Ibom E-Library for underprivileged children, promoting literacy, learning, and exposure.</p></div> </div>
+<div class="htmega_custom_content"><p class="p1">Mark Effiong is a pilot with American Airlines who has contributed immensely to Clarehil Literacy Development Foundation through his support and partnership in various outreach programs. He is the founder of VIFADAD Medical Mission and has collaborated with the foundation in organizing book presentations and medical outreaches.</p><p class="p1"> One of these impactful outreaches was held at St. Charles Orphanage, Anua, Akwa Ibom, where free medical treatments were provided to the children. The initiative also included an educational tour to the Ibom E-Library for underprivileged children, promoting literacy, learning, and exposure.</p></div> </div>
 <div class="htmega-toggle-button">
 <a class="togglebutton-474dee8 normal_btn" href="index.html@p=1971.html#">Read More <svg class="e-font-icon-svg e-fas-angle-down" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path></svg></a><a class="togglebutton-474dee8 opened_btn" href="index.html@p=1971.html#">Read less<svg class="e-font-icon-svg e-fas-angle-up" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"></path></svg></a> </div>
 </div>
@@ -501,7 +544,7 @@ Mark Effiong is a pilot with American Airlines who has contributed immensely to 
 </div></div></div><div data-column="ghost"></div><div data-column="ghost"></div></div></div><div data-row="bottom" style="border-radius: 35px;"><div class="ct-container-fluid"><div data-column="copyright">
 <div class="ct-footer-copyright" data-id="copyright">
 <p>Copyright © 2024 Clarehil Foundation
-All rights reserved. Powered by <a href="https://www.sundimension.ng" rel="noopener" style="font-weight: bold;" target="_blank" title="">SUNDIMENSION</a></p></div>
+All rights reserved. Powered by <a href="https://www.sundimension.ng" rel="noopener" style="font-weight: bold;" target="_blank" title="">Clarehil Foundation</a></p></div>
 </div></div></div></div></div></footer>
 <script type="speculationrules">
 {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/blocksy-child/*","/wp-content/themes/blocksy/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}

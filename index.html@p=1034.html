@@ -683,7 +683,7 @@ input#wpforms-4389-field_2 {
 </div></div></div><div data-column="ghost"></div><div data-column="ghost"></div></div></div><div data-row="bottom" style="border-radius: 35px;"><div class="ct-container-fluid"><div data-column="copyright">
 <div class="ct-footer-copyright" data-id="copyright">
 <p>Copyright © 2024 Clarehil Foundation
-All rights reserved. Powered by <a href="https://www.sundimension.ng" rel="noopener" style="font-weight: bold;" target="_blank" title="">SUNDIMENSION</a></p></div>
+All rights reserved. Powered by <a href="https://www.sundimension.ng" rel="noopener" style="font-weight: bold;" target="_blank" title="">Clarehil Foundation</a></p></div>
 </div></div></div></div></div></footer></div>
 <script type="speculationrules">
 {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/blocksy-child/*","/wp-content/themes/blocksy/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
@@ -764,5 +764,326 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 </script>
 <script id="elementor-frontend-js" src="wp-content/plugins/elementor/assets/js/frontend.min.js@ver=3.26.3"></script>
 <script defer="" src="site-fixes.js"></script>
+
+<!-- Clarehil Gallery — Full View Lightbox -->
+<style id="clarehil-gallery-lightbox-style">
+  .clarehil-gallery-item { cursor: zoom-in; }
+  .clarehil-gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2147483000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(0,0,0,.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .clarehil-gallery-lightbox.is-open { display: flex; }
+  .clarehil-gallery-lightbox-stage {
+    position: relative;
+    width: min(96vw, 1600px);
+    height: min(92vh, 1000px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    touch-action: none;
+  }
+  .clarehil-gallery-lightbox-image {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+    cursor: zoom-in;
+    transform-origin: center center;
+    transition: transform .2s ease;
+    image-rendering: auto;
+  }
+  .clarehil-gallery-lightbox.is-zoomed .clarehil-gallery-lightbox-image { cursor: grab; }
+  .clarehil-gallery-lightbox.is-dragging .clarehil-gallery-lightbox-image { cursor: grabbing; transition: none; }
+  .clarehil-gallery-lightbox-close,
+  .clarehil-gallery-lightbox-nav,
+  .clarehil-gallery-lightbox-zoom {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    z-index: 3;
+    border: 1px solid rgba(255,255,255,.22);
+    background: rgba(20,20,20,.72);
+    color: #fff;
+    box-shadow: 0 8px 30px rgba(0,0,0,.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    cursor: pointer;
+    transition: background .2s ease, transform .2s ease;
+  }
+  .clarehil-gallery-lightbox-close svg,
+  .clarehil-gallery-lightbox-nav svg,
+  .clarehil-gallery-lightbox-zoom svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    margin: 0;
+    padding: 0;
+  }
+  .clarehil-gallery-lightbox-close svg { width: 25px; height: 25px; flex-basis: 25px; }
+  .clarehil-gallery-lightbox-nav svg { width: 25px; height: 25px; flex-basis: 25px; }
+  .clarehil-gallery-lightbox-zoom[data-zoom="reset"] {
+    font: 600 15px/1 Arial, sans-serif;
+    letter-spacing: -.2px;
+  }
+  .clarehil-gallery-lightbox-close:hover,
+  .clarehil-gallery-lightbox-nav:hover,
+  .clarehil-gallery-lightbox-zoom:hover {
+    background: rgba(255,255,255,.18);
+    transform: scale(1.04);
+  }
+  .clarehil-gallery-lightbox-close {
+    top: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+  }
+  .clarehil-gallery-lightbox-nav {
+    top: 50%;
+    width: 46px;
+    height: 46px;
+    margin-top: -23px;
+    border-radius: 50%;
+  }
+  .clarehil-gallery-lightbox-prev { left: 18px; }
+  .clarehil-gallery-lightbox-next { right: 18px; }
+  .clarehil-gallery-lightbox-tools {
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 3;
+  }
+  .clarehil-gallery-lightbox-zoom {
+    position: static;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  .clarehil-gallery-lightbox-counter {
+    position: absolute;
+    left: 50%;
+    top: 18px;
+    transform: translateX(-50%);
+    z-index: 3;
+    color: #fff;
+    background: rgba(20,20,20,.62);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 999px;
+    padding: 7px 13px;
+    font: 600 13px/1.2 Arial, sans-serif;
+  }
+  .clarehil-gallery-lightbox-caption {
+    position: absolute;
+    left: 50%;
+    bottom: 72px;
+    transform: translateX(-50%);
+    z-index: 3;
+    max-width: min(80vw, 900px);
+    color: #fff;
+    text-align: center;
+    font: 500 14px/1.4 Arial, sans-serif;
+    text-shadow: 0 2px 12px #000;
+    pointer-events: none;
+  }
+  body.clarehil-lightbox-open { overflow: hidden; }
+  @media (max-width: 700px) {
+    .clarehil-gallery-lightbox { padding: 10px; }
+    .clarehil-gallery-lightbox-stage { width: 100vw; height: 88vh; }
+    .clarehil-gallery-lightbox-close { top: 10px; right: 10px; }
+    .clarehil-gallery-lightbox-prev { left: 8px; }
+    .clarehil-gallery-lightbox-next { right: 8px; }
+    .clarehil-gallery-lightbox-close { width: 38px; height: 38px; }
+    .clarehil-gallery-lightbox-nav { width: 42px; height: 42px; margin-top: -21px; }
+    .clarehil-gallery-lightbox-zoom { width: 38px; height: 38px; }
+    .clarehil-gallery-lightbox-caption { bottom: 68px; max-width: 78vw; font-size: 12px; }
+  }
+</style>
+<script id="clarehil-gallery-lightbox-script">
+(function () {
+  'use strict';
+
+  function initClarehilGalleryLightbox() {
+    var items = Array.prototype.slice.call(document.querySelectorAll('.clarehil-gallery-item'));
+    if (!items.length || document.getElementById('clarehil-gallery-lightbox')) return;
+
+    var box = document.createElement('div');
+    box.id = 'clarehil-gallery-lightbox';
+    box.className = 'clarehil-gallery-lightbox';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.setAttribute('aria-label', 'Image full view');
+    box.innerHTML =
+      '<button type="button" class="clarehil-gallery-lightbox-close" aria-label="Close full view"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5L19 19M19 5L5 19" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>' +
+      '<div class="clarehil-gallery-lightbox-counter" aria-live="polite"></div>' +
+      '<button type="button" class="clarehil-gallery-lightbox-nav clarehil-gallery-lightbox-prev" aria-label="Previous image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5L8 12L15 19" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' +
+      '<div class="clarehil-gallery-lightbox-stage">' +
+        '<img class="clarehil-gallery-lightbox-image" alt="" decoding="async" fetchpriority="high">' +
+      '</div>' +
+      '<button type="button" class="clarehil-gallery-lightbox-nav clarehil-gallery-lightbox-next" aria-label="Next image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5L16 12L9 19" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' +
+      '<div class="clarehil-gallery-lightbox-caption"></div>' +
+      '<div class="clarehil-gallery-lightbox-tools" aria-label="Image zoom controls">' +
+        '<button type="button" class="clarehil-gallery-lightbox-zoom" data-zoom="out" aria-label="Zoom out"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12H19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>' +
+        '<button type="button" class="clarehil-gallery-lightbox-zoom" data-zoom="reset" aria-label="Reset zoom">1:1</button>' +
+        '<button type="button" class="clarehil-gallery-lightbox-zoom" data-zoom="in" aria-label="Zoom in"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5V19M5 12H19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>' +
+      '</div>';
+    document.body.appendChild(box);
+
+    var image = box.querySelector('.clarehil-gallery-lightbox-image');
+    var counter = box.querySelector('.clarehil-gallery-lightbox-counter');
+    var caption = box.querySelector('.clarehil-gallery-lightbox-caption');
+    var current = 0;
+    var zoom = 1;
+    var panX = 0;
+    var panY = 0;
+    var dragging = false;
+    var dragStartX = 0;
+    var dragStartY = 0;
+    var startPanX = 0;
+    var startPanY = 0;
+    var lastTrigger = null;
+
+    function applyTransform() {
+      image.style.transform = 'translate3d(' + panX + 'px,' + panY + 'px,0) scale(' + zoom + ')';
+      box.classList.toggle('is-zoomed', zoom > 1);
+    }
+
+    function resetZoom() {
+      zoom = 1;
+      panX = 0;
+      panY = 0;
+      applyTransform();
+    }
+
+    function show(index) {
+      if (!items.length) return;
+      current = (index + items.length) % items.length;
+      var link = items[current];
+      var thumb = link.querySelector('img');
+      var source = link.getAttribute('href') || (thumb && thumb.currentSrc) || (thumb && thumb.src);
+      if (!source) return;
+
+      resetZoom();
+      image.src = source;
+      image.alt = thumb ? (thumb.alt || 'Gallery image') : 'Gallery image';
+      caption.textContent = thumb && thumb.alt ? thumb.alt : '';
+      counter.textContent = (current + 1) + ' / ' + items.length;
+    }
+
+    function open(index, trigger) {
+      lastTrigger = trigger || null;
+      show(index);
+      box.classList.add('is-open');
+      document.body.classList.add('clarehil-lightbox-open');
+      document.addEventListener('keydown', onKeyDown);
+      box.querySelector('.clarehil-gallery-lightbox-close').focus();
+    }
+
+    function close() {
+      box.classList.remove('is-open');
+      document.body.classList.remove('clarehil-lightbox-open');
+      document.removeEventListener('keydown', onKeyDown);
+      resetZoom();
+      if (lastTrigger) lastTrigger.focus();
+    }
+
+    function onKeyDown(event) {
+      if (event.key === 'Escape') close();
+      else if (event.key === 'ArrowLeft') show(current - 1);
+      else if (event.key === 'ArrowRight') show(current + 1);
+      else if (event.key === '+' || event.key === '=') setZoom(zoom + .25);
+      else if (event.key === '-') setZoom(zoom - .25);
+    }
+
+    function setZoom(value) {
+      zoom = Math.max(1, Math.min(4, value));
+      if (zoom === 1) { panX = 0; panY = 0; }
+      applyTransform();
+    }
+
+    items.forEach(function (item, index) {
+      item.addEventListener('click', function (event) {
+        event.preventDefault();
+        open(index, item);
+      });
+    });
+
+    box.querySelector('.clarehil-gallery-lightbox-close').addEventListener('click', close);
+    box.querySelector('.clarehil-gallery-lightbox-prev').addEventListener('click', function () { show(current - 1); });
+    box.querySelector('.clarehil-gallery-lightbox-next').addEventListener('click', function () { show(current + 1); });
+
+    box.addEventListener('click', function (event) {
+      if (event.target === box) close();
+    });
+
+    box.querySelectorAll('[data-zoom]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        var action = button.getAttribute('data-zoom');
+        if (action === 'in') setZoom(zoom + .25);
+        if (action === 'out') setZoom(zoom - .25);
+        if (action === 'reset') resetZoom();
+      });
+    });
+
+    image.addEventListener('dblclick', function () {
+      setZoom(zoom > 1 ? 1 : 2);
+    });
+
+    image.addEventListener('pointerdown', function (event) {
+      if (zoom <= 1) return;
+      dragging = true;
+      image.setPointerCapture(event.pointerId);
+      dragStartX = event.clientX;
+      dragStartY = event.clientY;
+      startPanX = panX;
+      startPanY = panY;
+      box.classList.add('is-dragging');
+    });
+    image.addEventListener('pointermove', function (event) {
+      if (!dragging) return;
+      panX = startPanX + event.clientX - dragStartX;
+      panY = startPanY + event.clientY - dragStartY;
+      applyTransform();
+    });
+    ['pointerup','pointercancel'].forEach(function (type) {
+      image.addEventListener(type, function () {
+        dragging = false;
+        box.classList.remove('is-dragging');
+      });
+    });
+
+    // Use the original linked image file in the lightbox. This avoids enlarging
+    // a cropped thumbnail when a higher-resolution source is already available.
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initClarehilGalleryLightbox);
+  } else {
+    initClarehilGalleryLightbox();
+  }
+})();
+</script>
 </body>
 </html>
